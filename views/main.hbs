@@ -1,0 +1,31 @@
+<script defer src="/js/deleteRoute.js"></script>
+<div id="map" style="width: 100%; height: 40%"></div>
+
+{{#if sessionBool}}
+
+<h2>ALL UPCOMING ROUTES</h2>
+<form action="/routes" method="POST" class="ui equal width center aligned padded grid">
+  {{!-- <div ></div> --}}
+
+  <ul>
+    {{#each routes}}
+    <li class="ui horizontal list">
+      <div class="item">
+        <h3><a href="/routes/show/{{this.id}}"><i class="marker icon"></i>{{this.routeTitle}}</a></h3>
+      </div>
+      <h4>{{this.datetimeStart}}</h4>
+      <h4>{{this.datetimeFinish}}</h4>
+      </div>
+      <button type="submit" class="delete item"><a href="/routes/{{this.id}}">DELETE</a></button>
+      <button type="submit" class="change item"><a href="/routes/edit/{{this.id}}"
+          data-id="{{this.id}}">EDIT</a></button>
+      {{/each}}
+    </li>
+  </ul>
+
+
+</form>
+{{else}}
+<h2>Sing up to create your route!!</h2>
+{{/if}}
+

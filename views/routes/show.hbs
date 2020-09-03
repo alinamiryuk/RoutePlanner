@@ -1,0 +1,14 @@
+<script defer src="/js/deleteRoute.js"></script>
+<script defer src="/js/editRoute.js"></script>
+
+{{#if sessionBool}}
+<form action="/routes" method="POST">
+
+  <h1>{{routeByID.routeTitle}}</h1>
+  <h4>Description: {{routeByID.description}}</h4>
+  <h4>Date and time: {{routeByID.datetimeStart}}{{routeByID.datetimeFinish}}</h4>
+  <h4>Creator: {{routeByID.creator}}</h4>
+  <button type="submit" class="delete"><a href="/routes/{{routeByID.id}}">DELETE</a></button>
+  <button type="submit" class="change"><a href="/routes/edit/{{routeByID.id}}" data-id="{{partyByID.id}}">EDIT</a></button>
+</form>
+{{/if}}
