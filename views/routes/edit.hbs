@@ -1,11 +1,31 @@
 <script defer src="/js/editRoute.js"></script>
+<script defer src="/js/addCard.js"></script>
 
-<form action="/routes/edit/{{routeByID.id}}" method="POST">
-<input type="text" class="" name="routeTitle" placeholder="routeTitle">
-  <input type="text" class="" name="latitude" placeholder="latitude">
-  <input type="text" class="" name="longitude" placeholder="longitude">
-  <input type="datetime-local" class="" name="datetimeStart" placeholder="date and time start">
-  <input type="datetime-local" class="" name="datetimeFinish" placeholder="date and time end">
-  <textarea type="text" class="" name="place" placeholder="description"></textarea>
-  <button type="submit" class="">SAVE CHANGES</button>
+<div id="map" style="width: 100%; height: 40%"></div>
+<form action="/routes/edit/{{routeByID.id}}" class="new-route ui form edit-route" method="POST" data-id={{routeByID.id}}>
+  <div class="ui equal width center aligned padded grid">
+
+    <label for="routeTitle-newRoute" class="six wide column">NAME YOUR ROUTE:</label>
+    <label for="datetimeStart-newRoute" class="five wide column">START TIME:</label>
+    <label for="datetimeFinish-newRoute" class="five wide column">PLAN YOUR FINISH TIME:</label>
+
+    <input id="routeTitle-newRoute" maxlength="12" type="text" class="six wide column" name="routeTitle"
+      placeholder="HEADER">
+    <input id="datetimeStart-newRoute" type="datetime-local" class="five wide column" name="datetimeStart"
+      placeholder="date and time start">
+    <input id="datetimeFinish-newRoute" type="datetime-local" class="five wide column" name="datetimeFinish"
+      placeholder="date and time end">
+    <textarea type="text" class="three wide column latitude" rows="3" name="latitude" readonly=""
+      placeholder="YOUR ROUTES COORDINATES WILL BE HERE"></textarea>
+      <textarea type="text" class="three wide column longitude" rows="3" name="longitude" readonly=""
+      placeholder="YOUR ROUTES COORDINATES WILL BE HERE"></textarea>
+    <textarea type="text" class="ten wide column" name="description" rows="3"
+      placeholder="WRITE A SHORT DESCRIPTION FOR YOURSELF AND FOR YOUR FELLOWS ABOUT THIS ROUTE HERE"></textarea>
+  </div>
+      <div class="ui equal width center aligned grid">
+    <button type="submit" class="ui secondary button">SAVE CHANGES</button>
+    <button type="reset" class="ui button">RESET</button>
+      </div>
+
+
 </form>

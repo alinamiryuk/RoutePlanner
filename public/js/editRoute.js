@@ -1,22 +1,23 @@
-const editRoutes = document.querySelectorAll('.change');
+const editRoutes = document.querySelectorAll('.edit-route');
 editRoutes.forEach((event) => {
-  event.addEventListener('click', async (e) => {
+  event.addEventListener('submit', async (e) => {
     e.preventDefault();
     const id = e.target.dataset.id;
-    const { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description } = e.target;
+    const { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description, action } = e.target;
+    console.log(routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description);
     console.log(id);
-    const response = await fetch(`/routes/edit/${id}`, {
-      method: 'post',
+    const response = await fetch(action, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        routeTitle,
-        description,
-        latitude, 
-        longitude,
-        datetimeStart,
-        datetimeFinish,
+        routeTitle: routeTitle.value,
+      description: description.value,
+      latitude: latitude.value, 
+      longitude: longitude.value,
+      datetimeStart: datetimeStart.value,
+      datetimeFinish: datetimeFinish.value,
       }),
     });
     const result = await response.json();

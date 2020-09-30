@@ -1,0 +1,10 @@
+a {
+  color: #563b44;
+  text-decoration: none;
+}
+
+.ui.secondary.button, .ui.secondary.button.change > a {
+  color:#ffffff !important;
+  text-shadow: none;
+  background-image: none;
+}

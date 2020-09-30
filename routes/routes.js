@@ -22,22 +22,23 @@ router
     });
     // let arrRoute = req.session.user.routes;
     // arrPart.push(newRoute._id);
-    res.json({
-      success: true,
-    });
+    // res.json({
+    //   success: true,
+    // });
   });
 
   router
   .route('/edit/:id')
   .get(async (req, res) => {
     const id = req.params.id;
-    console.log(id);
+    
     const routeByID = await Route.findById(id);
     res.render('routes/edit', {routeByID});
   })
   .post(async (req, res) => {
-    const { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description } = req.body;
     const id = req.params.id;
+    console.log(id);
+    const { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description } = req.body;
     const routeByID = await Route.findByIdAndUpdate({_id: id}, { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description });
        res.json({
       success: true,
