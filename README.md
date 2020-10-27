@@ -1,5 +1,5 @@
 # RoutePlanner
-Travel planning app by using yandex maps API.
+Travel planning app with yandex maps API
 
 ## Stack
 Node.js, Express, HBS, Semantic UI, CSS
