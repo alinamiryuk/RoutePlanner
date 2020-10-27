@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  {{!-- <link rel="stylesheet" type="style/css" href="/semantic/dist/semantic.min.css"> --}}
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=apikey&lang=ru_RU" type="text/javascript">
-    </script>
-  <title>RoutePlanner</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../public/favicon.ico">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=hide&lang=ru_RU" type="text/javascript"></script>
+  </head>
 
-<body>
-  
-  {{#if sessionBool}}
-
-  <div class="ui secondary pointing menu">
-    <a class="item name-finding" href="/">HOME</a>
-    <a class="item" href="/routes/new">CREATE A ROUTE</a>
-    <div class="right menu">
-      <p class="item id-finding" id="{{idUser}}">{{uName}}</p>
-      <a class="item" href="/auth/logout">LOGOUT</a>
+  <body>
+    {{#if sessionBool}}
+      <div class="ui secondary pointing menu">
+        <a class="item name-finding" href="/">HOME</a>
+        <a class="item" href="/routes/new">CREATE A ROUTE</a>
+        <div class="right menu">
+          <p class="item id-finding" id="{{idUser}}">{{uName}}</p>
+          <a class="item" href="/auth/logout">LOGOUT</a>
+        </div>
+      </div>
+    {{else}}
+    <div class="ui secondary pointing menu">
+      <a class="active item" href="/">HOME</a>
+      <div class="right menu"></div>
+      <a class="item" href="/auth/login">LOGIN</a>
+      <a class="item" href="/auth/registr">REGISTR</a>
     </div>
-  </div>
-  {{else}}
-  <div class="ui secondary pointing menu">
-    <a class="active item" href="/">HOME</a>
-    <div class="right menu"></div>
-    <a class="item" href="/auth/login">LOGIN</a>
-    <a class="item" href="/auth/registr">REGISTR</a>
-     </div>
-  </div>
-  {{/if}}
+    {{/if}}
 
 
-  {{{body}}}
+    {{{body}}}
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-  {{!-- <script src="semantic/dist/semantic.min.js"></script> --}}
-</body>
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    
+  </body>
 
 </html>

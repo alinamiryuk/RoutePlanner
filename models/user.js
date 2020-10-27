@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 module.exports = mongoose.model('user', {
   userName: {
@@ -15,15 +15,21 @@ module.exports = mongoose.model('user', {
     type: String,
     required: true,
   },
-  routesCreated: [{
-    type: mongoose.ObjectId,
-    ref: 'route',
-  }],
-  routesAccess: [{
-    type: mongoose.ObjectId,
-    ref: 'route',
-  }],
-  friends:[{
-    type: mongoose.ObjectId,
-  }]
-});
+  routesCreated: [
+    {
+      type: mongoose.ObjectId,
+      ref: 'route',
+    },
+  ],
+  routesAccess: [
+    {
+      type: mongoose.ObjectId,
+      ref: 'route',
+    },
+  ],
+  friends: [
+    {
+      type: mongoose.ObjectId,
+    },
+  ],
+})

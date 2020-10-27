@@ -1,9 +1,16 @@
-const form = document.querySelector('.new-route');
+const form = document.querySelector('.new-route')
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const { routeTitle, latitude, longitude, datetimeStart, datetimeFinish, description } = e.target;
-     console.log(description); 
+  e.preventDefault()
+  const {
+    routeTitle,
+    latitude,
+    longitude,
+    datetimeStart,
+    datetimeFinish,
+    description,
+  } = e.target
+  console.log(description)
   const response = await fetch('/routes/new', {
     method: 'POST',
     headers: {
@@ -12,16 +19,15 @@ form.addEventListener('submit', async (e) => {
     body: JSON.stringify({
       routeTitle: routeTitle.value,
       description: description.value,
-      latitude: latitude.value, 
+      latitude: latitude.value,
       longitude: longitude.value,
       datetimeStart: datetimeStart.value,
       datetimeFinish: datetimeFinish.value,
-        }),
-  });
-  const result = await response.json();
-  
+    }),
+  })
+  const result = await response.json()
+
   if (result.success) {
-    document.location=`/`;
-    //document.location=`/routes/show/${id}`;
+    document.location = `/`
   }
-});
+})

@@ -1,54 +1,31 @@
 <script defer src="/js/deleteRoute.js"></script>
-{{!-- <script defer src="/js/showRoute.js"></script> --}}
-
 
 {{#if sessionBool}}
-
-<h2>ALL UPCOMING ROUTES</h2>
-<form action="/routes" method="POST" class="">
-
-  <div class="ui equal width center aligned padded grid">
-    {{#each routes}}
-
-    <div class="two wide column">
-      <div class="ui cards">
-        <div class="card">
-          <div class="content">
-
-            <div class="header">
-              <a href="/routes/show/{{this.id}}"><i class="marker icon"></i>{{this.routeTitle}}</a>
-            </div>
-            <div class="meta">
-              {{this.datetimeStart}}
-            </div>
-            <div class="meta">
-              {{this.datetimeFinish}}
-            </div>
-
-            {{!-- <div class="hidden-coord" style="visibility: hidden;">
-              {{this.coordinates}}
-            </div> --}}
-
-
+  <h2>ALL UPCOMING ROUTES</h2>
+    <form action="/routes" method="POST" class="">
+      <div class="ui equal width center aligned padded grid">
+        {{#each routes}}
+          <div class="two wide column">
+            <div class="ui cards">
+              <div class="card">
+                <div class="content">
+                  <div class="header">
+                    <a href="/routes/show/{{this.id}}"><img class="logo-main" src="/images/logo.png" />{{this.routeTitle}}</a>
+                  </div>
+                <div class="meta">{{this.datetimeStart}}</div>
+              <div class="meta">{{this.datetimeFinish}}</div>
             <div class="ui two buttons">
               <button type="submit" class="ui button delete"><a href="/routes/{{this.id}}">DELETE</a></button>
               <button type="submit" class="ui button change"><a href="/routes/edit/{{this.id}}"
                   data-id="{{this.id}}">EDIT</a></button>
             </div>
-            {{!-- <div id="map" style="width: 100%; height: 100%"></div> --}}
-
           </div>
-
-
         </div>
       </div>
     </div>
-
     {{/each}}
   </div>
-
-
 </form>
 {{else}}
-<h2>SIGN UP TO CREATE YOUR ROUTE!!</h2>
+  <h2>SIGN UP TO CREATE YOUR ROUTE!!</h2>
 {{/if}}

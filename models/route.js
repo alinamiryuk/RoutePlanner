@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 module.exports = mongoose.model('route', {
   routeTitle: String,
@@ -8,10 +8,12 @@ module.exports = mongoose.model('route', {
     type: mongoose.ObjectId,
     ref: 'user',
   },
-  fellows: [{
-    type: mongoose.ObjectId,
-    ref: 'user',
-  }],
-  datetimeStart: String, 
-  datetimeFinish: String,  
-});
+  fellows: [
+    {
+      type: mongoose.ObjectId,
+      ref: 'user',
+    },
+  ],
+  datetimeStart: String,
+  datetimeFinish: String,
+})

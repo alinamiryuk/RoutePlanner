@@ -1,15 +1,18 @@
 # RoutePlanner
+Travel planning app by using yandex maps API.
 
-Опция editorDrawOver запрещает ставить точки поверх объектов карты.
-Это нужно для того, чтобы пользователи могли создавать промежуточные точки.
+## Stack
+Node.js, Express, HBS, Semantic UI, CSS
 
-Опция editorMidPointsType задает тип промежуточных точек, которые будут создаваться на маршруте.
-"via" - будут создаваться транзитные точки;
-"way" - путевые точки.
+## Authentication
+![screenshot](./public/images/login.jpg)
+![screenshot](./public/images/signup.jpg)
 
-При включении опции addWayPoints пользователи смогут создавать путевые точки по клику на карте.
+## Create a new route
+![screenshot](./public/images/create.jpg)
 
-При включении опции removeWayPoints пользователи смогут удалять путевые точки. 
-Для удаления точки нужно дважды кликнуть по ней.
+## Take a look at all of your routes
+![screenshot](./public/images/allcards.jpg)
 
-При включении опции addMidPoints пользователи смогут создавать
+## Watch / Edit / Delete routes
+![screenshot](./public/images/show.jpg)
